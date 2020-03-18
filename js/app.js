@@ -1,3 +1,6 @@
+
+
+
 // Each of the two players are given 3 cards from a standard deck and a deck of cards
 
 
@@ -175,14 +178,30 @@ const myDeck = [
 ]
 
 
+//first steps 
+//build out the player class
+//		-what does every player have that stays the same?
+//		-what does each player have that is unique?
+//		-does each player need to have a property that tells if it is their turn or not?
 
 
+//Next steps
+//Build out game functionality, in small pieces, get it working in the console.
+
+//maybe you have a boolean k:v pair that says if the game is active or not
+//so that it switches to active when the start button is pressed
+//and then when it's active, you show the cards. 
+
+//Hint: make a class in your css called 'hidden' and make it visually hide anything
+//	with that class.
+
+
+//buttons that show up for each card. So maybe they're all part of the same div? or whatever helps you get the info of the button, sending to the associated card.
 class Player {
-	constructor() {
-
+	constructor(name) {
+		this.name = name;
 	}
 
-//methods that define Player
 
 }
 
@@ -192,18 +211,67 @@ class Player {
 
 
 
-
+//start button
+let playing = false;
+let startButton;
 
 
 
 //object
 const game = {
 
+	
+	playerOne: {
+		score: 0,
+		hand: []
+	},
+
+	playerTwo: {
+		score: 0,
+		hand: []
+	},
+
+	// shuffledDeck: [],
+	rounds: 0,
+	match: 0,
+	player: [],
+	deck: Array.from(myDeck), //insert deck of cards into game object
 
 
 
 
-//methods that define game
+
+
+addName: function(name) {
+    const newName = new Player(name);
+    this.player.push(newContact);
+    const newPlayerName = document.createElement("li");
+    newPlayerName.classList.add = "name";
+    newPlayerName.innerText = `Name: ${name}`;
+    const ul = document.querySelector("#name-entry");
+    ul.append(newPlayerName);
+    
+  },
+
+
+
+//3 draw cards to players
+drawCards: function () {
+    for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
+      let drawCardForPlayerOne = (Math.floor(Math.random() * this.deck.length))
+      console.log('random card::')
+      console.log(drawCardForPlayerOne)
+      console.log(this.deck[drawCardForPlayerOne])
+      this.playerOne.hand.push(this.deck[drawCardForPlayerOne])
+        this.deck.splice(drawCardForPlayerOne, 1)
+   
+    }
+      //draws playerOne 3 random cards from deck
+      alert(`playerOne gets handed ${this.playerOne.hand[0].name}, ${this.playerOne.hand[1].name}, and ${this.playerOne.hand[2].name}`)
+    },
+
+
+
 
 
 
@@ -230,7 +298,7 @@ const game = {
 
 
 
-
+console.log(game.drawCards());
 
 
 
