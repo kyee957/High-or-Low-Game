@@ -198,8 +198,10 @@ const myDeck = [
 
 //buttons that show up for each card. So maybe they're all part of the same div? or whatever helps you get the info of the button, sending to the associated card.
 class Player {
-	constructor(name) {
-		this.name = name;
+	constructor(name,score,hand) {
+		this.name = name
+		this.score = 0
+		this.hand = []
 	}
 
 
@@ -208,12 +210,8 @@ class Player {
 
 
 
-
-
-
-//start button
 let playing = false;
-let startButton;
+let startButton = false;
 
 
 
@@ -221,96 +219,81 @@ let startButton;
 const game = {
 
 	
-	playerOne: {
-		score: 0,
-		hand: []
-	},
 
-	playerTwo: {
-		score: 0,
-		hand: []
-	},
-
-	// shuffledDeck: [],
 	rounds: 0,
 	match: 0,
-	player: [],
+	players: [],
 	deck: Array.from(myDeck), //insert deck of cards into game object
 
 
+// this.players[0].name
+//inside a loop you might say this.players[i].name
 
 
-
-
-addName: function(name) {
-    const newName = new Player(name);
-    this.player.push(newContact);
-    const newPlayerName = document.createElement("li");
-    newPlayerName.classList.add = "name";
-    newPlayerName.innerText = `Name: ${name}`;
-    const ul = document.querySelector("#name-entry");
-    ul.append(newPlayerName);
+	addName: function(name) {
+    	const newPlyr = new Player(name);
+    	this.players.push(newPlyr);
+    	//this.players.name = //the value you get from the form input
+    	const newPlayerName = document.createElement("li");
+    	newPlayerName.classList.add = "name";
+    	newPlayerName.innerText = `Name: ${name}`;
+    	const ul = document.querySelector("#name-entry");
+    	ul.append(newPlayerName);
     
-  },
+	},
 
 
 
-//3 draw cards to players
-drawCards: function () {
-    for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
-      let drawCardForPlayerOne = (Math.floor(Math.random() * this.deck.length))
-      console.log('random card::')
-      console.log(drawCardForPlayerOne)
-      console.log(this.deck[drawCardForPlayerOne])
-      this.playerOne.hand.push(this.deck[drawCardForPlayerOne])
-        this.deck.splice(drawCardForPlayerOne, 1)
-   
-    }
-      //draws playerOne 3 random cards from deck
-      alert(`playerOne gets handed ${this.playerOne.hand[0].name}, ${this.playerOne.hand[1].name}, and ${this.playerOne.hand[2].name}`)
-    },
+	// draw 3 cards to players
+	cardsOnHand: function (playerIndex) {
+    	for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
+      		let drawCardForPlayr = (Math.floor(Math.random() * this.deck.length))
+      		console.log('random card::')
+      		console.log(drawCardForPlayr)
+      		console.log(this.deck[drawCardForPlayr])
+      		this.players[playerIndex].hand.push(this.deck[drawCardForPlayr])
+       	 	this.deck.splice(drawCardForPlayr, 1)
+    	}
+	},
+
+// how can I optimize the method's function?
+// abstract but powerful with use of paramaters
+// make similar method as drawCards but for the deck of cards next to the 3 cards.
+// make another property instead of hand
+
+
+	drawMysteryCard: function (playerIndex) {
+    	for(let i = 0; i <= 1; i++){ //draw 1 mystery card from deck to playerOne and playerTwo, randomize
+      		let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length))
+
+
+		}
+
+	},
 
 
 
+// console.log(game.drawCards());
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-console.log(game.drawCards());
+//////////////////////////
+//BELOW THE GAME OBJECT
+//PUT EVENT LISTENERS
+//one for the form input,
+//eventually you'll need others for other parts of the game. e.g. start button and other stuff
 
 
 
 
+// add event listener
+// use class to create objects
+// push those to game player Array
+// use array to compare values to each player
 
 
-
-
-
-
-
-
+// High or low button functioning
+// Players can draw cards from deck
+// Moving from phase to phase
 
 
 
