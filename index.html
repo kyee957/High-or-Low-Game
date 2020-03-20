@@ -8,32 +8,45 @@
 <body>
 
 
-  	<form id="name-adding-form">
+<!--   	<form id="name-adding-form">
     	<input type="text" id="firstName" placeholder="Enter Name">
-  	    <input type="submit" value="Submit">
-  	</form>
+  	    <button id="AddName" type="submit">Add New Player!</button>
+  	</form> -->
 
   	<ul id="name-entry">
   	</ul>
 
 
 
-
+<!-- 
 	<div id="start-container">
     	<div id="game"></div>
     	<div id="score">0</div>
     	<div class="game-ready">
-        <div id="start-button">Start</div>
+        <div id="start-button" onclick="game.start()">Start</div>
     	</div>
+	</div> -->
+
+
+	<div id="card-container">
+		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
+		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
+		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
+		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
 	</div>
 
 
-	<div class="card-container">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-	</div>
+	<div class="highorlowbuttons">
+        <div class="game-options">
+        <input type="button" class="btn" value="high" onclick="game.renderDeck()">
+        <input type="button" class="btn" value="low" onclick="game.renderDeck()">
+    	</div>
+    </div>
+
+  	<form id="name-adding-form">
+    	<input type="text" id="firstName" name="playerName" placeholder="Enter Name">
+  	    <button id="AddName">Submit</button>
+  	</form>
 
 
 

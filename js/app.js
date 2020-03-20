@@ -1,6 +1,4 @@
 
-
-
 // Each of the two players are given 3 cards from a standard deck and a deck of cards
 
 
@@ -180,9 +178,9 @@ const myDeck = [
 
 //first steps 
 //build out the player class
-//		-what does every player have that stays the same?
-//		-what does each player have that is unique?
-//		-does each player need to have a property that tells if it is their turn or not?
+//    -what does every player have that stays the same?
+//    -what does each player have that is unique?
+//    -does each player need to have a property that tells if it is their turn or not?
 
 
 //Next steps
@@ -193,68 +191,107 @@ const myDeck = [
 //and then when it's active, you show the cards. 
 
 //Hint: make a class in your css called 'hidden' and make it visually hide anything
-//	with that class.
+//  with that class.
 
 
 //buttons that show up for each card. So maybe they're all part of the same div? or whatever helps you get the info of the button, sending to the associated card.
 class Player {
-	constructor(name,score,hand) {
-		this.name = name
-		this.score = 0
-		this.hand = []
-	}
+  constructor(name) {
+    this.name = name
+    this.score = 0
+    this.hand = []
+    this.turn = false
+  }
 
 
 }
+//at the start of the game, you will changeplayer one's turn to truelike this
+// Fatima.turn = true 
+
+//then at the end of their turn it will become false like this
+// Fatima.turn = false
+//Then player 2 is up, you'll need to change their turn value to true.
+//Nate.turn = true
 
 
+//game.changeTurn is going to be a function that switches the boolean value of the current, and the next playe
 
+const playerOne = new Player("Fatima")
+const playerTwo = new Player("Nate")
+console.log(playerOne);
+console.log("Fatima's turn is \n", playerOne.turn);
+
+playerOne.turn = true
+console.log("NOW, Fatima's turn is \n", playerOne.turn);
+
+console.log(playerTwo);
 
 let playing = false;
 let startButton = false;
 
 
-
 //object
 const game = {
 
-	
+  
 
-	rounds: 0,
-	match: 0,
-	players: [],
-	deck: Array.from(myDeck), //insert deck of cards into game object
+  rounds: 0,
+  match: 0,
+  players: [],
+  deck: Array.from(myDeck), //insert deck of cards into game object
 
+  whoseTurnPlayerIndex: 0,
+  // phase
+  // right hand card
+
+  // track how many phases each player has completed
 
 // this.players[0].name
 //inside a loop you might say this.players[i].name
 
 
-	addName: function(name) {
-    	const newPlyr = new Player(name);
-    	this.players.push(newPlyr);
-    	//this.players.name = //the value you get from the form input
-    	const newPlayerName = document.createElement("li");
-    	newPlayerName.classList.add = "name";
-    	newPlayerName.innerText = `Name: ${name}`;
-    	const ul = document.querySelector("#name-entry");
-    	ul.append(newPlayerName);
+  addName: function(name) {
+      const newPlyr = new Player(name);
+      this.players.push(newPlyr);
+      //this.players.name = //the value you get from the form input
+      const newPlayerName = document.createElement("li");
+      newPlayerName.classList.add = "name";
+      newPlayerName.innerText = `Name: ${name}`;
+      const ul = document.querySelector("#name-entry");
+      ul.append(newPlayerName);
     
-	},
+  },
+
+  nextPlayer: function () {
+    // come back to this later
+  },
+
+  start: function() {
+    console.log("Start button was clicked")
+    // set phase
+
+    // deal 3 cards to player 0 (hard code for now) -- call function below
+    // deal/set right card -- this needs to be tracked
+
+    // say "click high low to guess"
+    
+    // show buttons 
+      // cycle through cards in this phase -- nextCard() method?
+  },
 
 
 
-	// draw 3 cards to players
-	cardsOnHand: function (playerIndex) {
-    	for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
-      		let drawCardForPlayr = (Math.floor(Math.random() * this.deck.length))
-      		console.log('random card::')
-      		console.log(drawCardForPlayr)
-      		console.log(this.deck[drawCardForPlayr])
-      		this.players[playerIndex].hand.push(this.deck[drawCardForPlayr])
-       	 	this.deck.splice(drawCardForPlayr, 1)
-    	}
-	},
+  // draw 3 cards to players
+  putCardsOnHand: function (playerIndex) {
+      for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
+          let drawCardsForPlayr = (Math.floor(Math.random() * this.deck.length))
+          console.log('random card:')
+          console.log(drawCardsForPlayr)
+          console.log(this.deck[drawCardsForPlayr])
+          this.players[playerIndex].hand.push(this.deck[drawCardsForPlayr])
+          this.deck.splice(drawCardsForPlayr, 1)
+      }
+  },
 
 // how can I optimize the method's function?
 // abstract but powerful with use of paramaters
@@ -262,19 +299,51 @@ const game = {
 // make another property instead of hand
 
 
-	drawMysteryCard: function (playerIndex) {
-    	for(let i = 0; i <= 1; i++){ //draw 1 mystery card from deck to playerOne and playerTwo, randomize
-      		let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length))
+  drawMysteryCard: function (playerIndex) {
+      for(let i = 0; i < 1; i++){ //draw 1 mystery card from deck to playerOne and playerTwo, randomize
+          let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length))
+          console.log('you drew card:')
+          console.log(oneCardFrmDeck)
+          console.log(this.deck[oneCardFrmDeck])
+          this.players[playerIndex].hand.push(this.deck[oneCardFrmDeck])
 
 
-		}
+    }
 
-	},
+  },
 
 
+
+  renderDeck: function (myDeck) {
+      document.getElementById("card-container").innerHTML = "";
+
+    for(let i = 0; i < myDeck.length; i++) {
+      let revealCards = document.createElement("div");
+        card.className = "reveal-card" + myDeck[i].name;
+      }
+  },
+
+
+
+
+
+
+}
 
 // console.log(game.drawCards());
 
+const addPlayerButton = document.querySelector("#AddName")
+
+addPlayerButton.addEventListener("click", (event) => {
+  
+  event.preventDefault();
+  console.log("event");
+  console.log(event);
+  console.log("this is the event target from the name form\n", event.target);
+  game.addName(event.target)
+  
+
+});
 
 //////////////////////////
 //BELOW THE GAME OBJECT
@@ -294,28 +363,6 @@ const game = {
 // High or low button functioning
 // Players can draw cards from deck
 // Moving from phase to phase
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
