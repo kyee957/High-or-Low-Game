@@ -7,46 +7,120 @@
 </head>
 <body>
 
+ <!-- start button  -->
+	<div id="start-container">
+    	<div id="game"></div>
+    	<div id="score">0</div>
+    	<div class="game-ready">
+        <div id="start-button">Start</div>
+    	</div>
+	</div>
 
-<!--   	<form id="name-adding-form">
-    	<input type="text" id="firstName" placeholder="Enter Name">
-  	    <button id="AddName" type="submit">Add New Player!</button>
-  	</form> -->
 
+
+<!-- player's name will be displayed here -->
   	<ul id="name-entry">
   	</ul>
 
 
 
-<!-- 
-	<div id="start-container">
-    	<div id="game"></div>
-    	<div id="score">0</div>
-    	<div class="game-ready">
-        <div id="start-button" onclick="game.start()">Start</div>
-    	</div>
-	</div> -->
+
+<!-- player's enter name into this form -->
+  	<form id="name-adding-form">
+    	<input type="text" id="firstName" name="playerName" placeholder="Enter Name">
+  	    <button type="submit" id="AddName">Submit</button>
+  	</form>
 
 
-	<div id="card-container">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
-		<img class="card" src="images/hidden-card-transparent.png" alt="hidden-card">
+
+
+
+<!-- high and low buttons for all 3 cards shown on table will be here -->
+        
+		<div class="highlowbuttons">
+        	<div class="left-card">
+        		<p class="choicehl">card one:</p>
+        		<input class="hlbuttons" type="button" id="Lhigh-button" class="btn" value="high">
+        		<input class="hlbuttons" type="button" id="Llow-button" class="btn" value="low">
+    		</div>
+    		<div class="middle-card">
+    			<p class="choicehl">card two:</p>
+        		<input class="hlbuttons" type="button" id="Mhigh-button" class="btn" value="high">
+        		<input class="hlbuttons" type="button" id="Mlow-button" class="btn" value="low">
+    		</div>
+    		<div class="right-card">
+				<p class="choicehl">card three:</p>
+        		<input class="hlbuttons" type="button" id="Rhigh-button" class="btn" value="high">
+        		<input class="hlbuttons" type="button" id="Rlow-button" class="btn" value="low">
+    		</div>
+		</div>
+
+
+	<div>
+		<img id="card-facedown" class="hidden-card" src="images/card-facedown.jpeg" alt="hidden-card">
 	</div>
 
 
-	<div class="highorlowbuttons">
-        <div class="game-options">
-        <input type="button" class="btn" value="high" onclick="game.renderDeck()">
-        <input type="button" class="btn" value="low" onclick="game.renderDeck()">
-    	</div>
-    </div>
 
-  	<form id="name-adding-form">
-    	<input type="text" id="firstName" name="playerName" placeholder="Enter Name">
-  	    <button id="AddName">Submit</button>
-  	</form>
+
+<!-- three cards face up and one deck of cards shown here -->
+	<div id="card-container">
+		<!-- <img class="card" src="images/10C.jpeg" alt="10C">
+		<img class="card" src="images/10D.jpeg" alt="10D">
+		<img class="card" src="images/10H.jpeg" alt="10H">
+		<img class="card" src="images/10S.jpeg" alt="10S">
+		<img class="card" src="images/2C.jpeg" alt="2C">
+		<img class="card" src="images/2D.png" alt="2D">
+		<img class="card" src="images/2H.jpeg" alt="2H">
+		<img class="card" src="images/2S.jpeg" alt="2S">
+		<img class="card" src="images/3C.jpeg" alt="3C">
+		<img class="card" src="images/3D.jpeg" alt="3D">
+		<img class="card" src="images/3H.jpeg" alt="3H">
+		<img class="card" src="images/3S.jpeg" alt="3S">
+		<img class="card" src="images/4C.jpeg" alt="4C">
+		<img class="card" src="images/4D.jpeg" alt="4D">
+		<img class="card" src="images/4H.jpeg" alt="4H">
+		<img class="card" src="images/4S.jpeg" alt="4S">
+		<img class="card" src="images/5C.jpeg" alt="5C">
+		<img class="card" src="images/5D.jpeg" alt="5D">
+		<img class="card" src="images/5H.jpeg" alt="5H">
+		<img class="card" src="images/5S.jpeg" alt="5S">
+		<img class="card" src="images/6C.jpeg" alt="6C">
+		<img class="card" src="images/6D.jpeg" alt="6D">
+		<img class="card" src="images/6H.jpeg" alt="6H">
+		<img class="card" src="images/6S.jpeg" alt="6S">
+		<img class="card" src="images/7C.jpeg" alt="7C">
+		<img class="card" src="images/7D.jpeg" alt="7D">
+		<img class="card" src="images/7H.jpeg" alt="7H">
+		<img class="card" src="images/7S.jpeg" alt="7S">
+		<img class="card" src="images/8C.jpeg" alt="8C">
+		<img class="card" src="images/8D.jpeg" alt="8D">
+		<img class="card" src="images/8H.jpeg" alt="8H">
+		<img class="card" src="images/8S.jpeg" alt="8S">
+		<img class="card" src="images/9C.jpeg" alt="9C">
+		<img class="card" src="images/9D.jpeg" alt="9D">
+		<img class="card" src="images/9H.jpeg" alt="9H">
+		<img class="card" src="images/9S.jpeg" alt="9S">
+		<img class="card" src="images/AC.png" alt="AC">
+		<img class="card" src="images/AD.png" alt="AD">
+		<img class="card" src="images/AH.jpeg" alt="AH">
+		<img class="card" src="images/AS.png" alt="AS">
+		<img class="card" src="images/JC.jpeg" alt="JC">
+		<img class="card" src="images/JD.png" alt="JD">
+		<img class="card" src="images/JH.jpeg" alt="JH">
+		<img class="card" src="images/JS.jpeg" alt="JS">
+		<img class="card" src="images/QC.gif" alt="QC">
+		<img class="card" src="images/QD.jpeg" alt="QD">
+		<img class="card" src="images/QH.jpeg" alt="QH">
+		<img class="card" src="images/QS.jpeg" alt="QS">
+		<img class="card" src="images/KC.jpeg" alt="KC">
+		<img class="card" src="images/KD.jpeg" alt="KD">
+		<img class="card" src="images/KH.jpeg" alt="KH">
+		<img class="card" src="images/KS.jpeg" alt="KS"> -->
+	</div>
+
+
+
 
 
 

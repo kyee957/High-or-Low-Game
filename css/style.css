@@ -1,5 +1,6 @@
 
 html, body {
+    background-color: #1ABCAB;
 	margin: 0;
 	height: 100%;
 	width: 100%;
@@ -7,6 +8,9 @@ html, body {
 	font-family: 'Comfortaa', cursive;
 }
 
+ul {
+    list-style-type: none;
+}
 
 
 
@@ -49,10 +53,9 @@ html, body {
 }
 
 #start-button {            
-    border: 3px solid #333344;
+    border: 3px solid #014254;
     padding: 10px 20px;
-    background-color: transparent;
-    color: #333344;
+    color: #014254;
     font-size: 30px;
    	cursor: pointer;
     background-color: purple;
@@ -60,6 +63,11 @@ html, body {
 
 }
 
+
+#start-button:hover {
+    transform: scale(1.1);
+
+}
 
 .card-container {
 	display: flex;
@@ -79,8 +87,42 @@ html, body {
 	padding: 20px;
 	height: auto;
 	width: 15%;
-	border: 3px solid pink;
-
+/*	border: 3px solid pink;
+*/
 }
 
+#card-facedown {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 35px;
+    padding: 20px;
+    height: auto;
+    width: 15%;
+    border-radius: 30px;
+}
+
+.threeCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 35px;
+    padding: 20px;
+    height: auto;
+    width: 15%;
+}
+
+.choicehl {
+    color: #014254;
+    font-size: 20px;
+}
+
+.hlbuttons {
+    color: #014254;
+    font-size: 20px;
+    border-radius: 5px;
+
+}
 
