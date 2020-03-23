@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>High or Low</title>
+	<meta charset="UTF-8">
+	<title>High or Low Game</title>
+
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+	<body>
 
- <!-- start button  -->
-	<div id="start-container">
-    	<div id="game"></div>
-    	<div id="score">0</div>
-    	<div class="game-ready">
-        <div id="start-button">Start</div>
-    	</div>
+
+	<h1 class="title">High or Low</h1>
+	<!-- <div>
+		<p id="description">2 player game.</br>Guess past three rounds.</br>Who will be the first to finish?</p>
+	</div> -->
+
+
+	<div class="mystery-card">   
+		<h4>How to play:</h4>
+		<p class="lastinstructions">Find a friend.</p>
+		<p class="lastinstructions">Flip a coin to determine who goes first.</p>
+		<p class="lastinstructions">Three cards will be given to each player.</p>
+		<p class="lastinstructions">Decide whether each card is "higher" or "lower" than the mystery card.</p>
+		<p class="lastinstructions">Player that guesses all three cards correctly wins.</p>
+		<p class="lastinstructions">Goodluck!</p>
 	</div>
 
-
-
-<!-- player's name will be displayed here -->
-  	<ul id="name-entry">
-  	</ul>
-
-
-
-
 <!-- player's enter name into this form -->
-  	<form id="name-adding-form">
-    	<input type="text" id="firstName" name="playerName" placeholder="Enter Name">
-  	    <button type="submit" id="AddName">Submit</button>
-  	</form>
+	<div id="name-adding-form">
+  		<form id="p1Form">
+    		<input type="text" id="firstName1" name="playerName" placeholder="Player 1 : Name">
+  	    	<button type="submit" id="AddName1">Submit</button>
+  		</form>
 
+		<form id="p2Form">
+    		<input type="text" id="firstName2" name="playerName" placeholder="Player 2 : Name">
+  	    	<button type="submit" id="AddName2">Submit</button>
+  		</form>
+  	</div>
 
+ <!-- start button  -->
+    <div id="game"></div>
+    <div id="start-box">
+    	<p class="description-above-start">Ready, set, go!</p>
+    	<div id="start-button">Start</div>
+    </div>
 
-
-
-<!-- high and low buttons for all 3 cards shown on table will be here -->
         
-		<div class="highlowbuttons">
-        	<div class="left-card">
-        		<p class="choicehl">card one:</p>
-        		<input class="hlbuttons" type="button" id="Lhigh-button" class="btn" value="high">
-        		<input class="hlbuttons" type="button" id="Llow-button" class="btn" value="low">
+
+
+		<h2 class="title-mystery-card">- Mystery card -</h2>
+
+	
+<!-- player's name will be displayed here -->
+
+	<div class="cardsontable">
+
+		<div class="player-1">
+			<p class="name-player1">Player 1</p>
+			<div class="enter-player1-name"> 
+  				<ul id="name-entry1"></ul>
     		</div>
-    		<div class="middle-card">
-    			<p class="choicehl">card two:</p>
-        		<input class="hlbuttons" type="button" id="Mhigh-button" class="btn" value="high">
-        		<input class="hlbuttons" type="button" id="Mlow-button" class="btn" value="low">
-    		</div>
-    		<div class="right-card">
-				<p class="choicehl">card three:</p>
-        		<input class="hlbuttons" type="button" id="Rhigh-button" class="btn" value="high">
-        		<input class="hlbuttons" type="button" id="Rlow-button" class="btn" value="low">
-    		</div>
+			<!-- <div id="scoreP1">0</div> -->
 		</div>
 
-
-	<div>
 		<img id="card-facedown" class="hidden-card" src="images/card-facedown.jpeg" alt="hidden-card">
+		
+		<div class="player-2">
+			<p class="name-player2">Player 2</p>
+			<div class="enter-player2-name"> 
+  				<ul id="name-entry2"></ul>
+    		</div>
+<!-- 			<div id="scoreP2">0</div>	
+ -->		</div>
+
 	</div>
 
 
@@ -122,6 +138,24 @@
 
 
 
+
+<!-- high and low buttons for all 3 cards shown on table will be here -->
+
+
+<div class="highlowbuttons">
+        <div class="left-card">
+        	<input class="hlbuttons" type="button" id="Lhigh-button" class="btn" value="high">
+        	<input class="hlbuttons" type="button" id="Llow-button" class="btn" value="low">
+    	</div>
+    	<div class="middle-card">
+        	<input class="hlbuttons" type="button" id="Mhigh-button" class="btn" value="high">
+        	<input class="hlbuttons" type="button" id="Mlow-button" class="btn" value="low">
+    	</div>
+    	<div class="right-card">
+        	<input class="hlbuttons" type="button" id="Rhigh-button" class="btn" value="high">
+        	<input class="hlbuttons" type="button" id="Rlow-button" class="btn" value="low">
+    	</div>
+	</div>
 
 
 

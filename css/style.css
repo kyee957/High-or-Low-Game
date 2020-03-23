@@ -1,11 +1,71 @@
 
-html, body {
-    background-color: #1ABCAB;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+    background-color: #58CCED;
 	margin: 0;
 	height: 100%;
 	width: 100%;
-	position: relative;
 	font-family: 'Comfortaa', cursive;
+
+}
+
+.description-above-start {
+    font-size: 20px;
+}
+
+
+
+#name-entry2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 45px;
+
+/*    border: 3px solid yellow;
+*/
+}
+
+#name-entry1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 45px;
+
+/*    border: 3px solid yellow;
+*/
+}
+
+
+.title {
+    height: 50%;
+/*  border: 3px solid red;
+*/}
+
+
+h1 {
+    text-align: center;
+    font-size: 200px;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    margin: 20px 0px 20px 0px;
+}
+
+#description {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: .5px;
+    line-height: 2.5;
+    color: #014254;
+/*  border: 3px solid yellow;
+*//**/
 }
 
 ul {
@@ -13,68 +73,127 @@ ul {
 }
 
 
+#name-adding-form {
+    display: flex;
+    flex-direction: row;
 
-#start-container
-{
-
-    width: 100%;
+    justify-content: space-around;
+/*  border: 3px solid red;
+*/  margin: 60px 0px 50px 0px;
+    padding-right: 20px;
     height: 100%;
+    width: 100%;
 }
 
-#score {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 10vh;
-    color: #333344;
-    }
 
-#game {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+#firstName1, #firstName2 {
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    color: #014254;
+    font-size: 15px;
+/*  border: 1px solid grey;
+*/  font-family: 'Comfortaa', cursive;
+
 }
-    
-    
-.game-ready {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+#AddName1, #AddName2 {
+    display: flex;
+    border: 2px solid #9ACD32;
+    padding: 5px 15px;
+    color: #014254;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #9ACD32;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+
+/*    text-shadow: 1px 1px 2px black;
+*/}
+
+
+h4 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+/*    border: 2px solid yellow;
+*/  margin-top: 0px;
+    margin-bottom: 10px;
+    color: #014254;
+
+
+}
+.mystery-card {
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-        
-}
+/*    border: 3px solid red;
+*/}
 
-#start-button {            
-    border: 3px solid #014254;
-    padding: 10px 20px;
+
+.lastinstructions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+/*    border: 3px solid blue;
+*/    font-size: 15px;
+    letter-spacing: .5px;
     color: #014254;
-    font-size: 30px;
-   	cursor: pointer;
-    background-color: purple;
+    font-weight: 900;
+    padding: 0px 0px 20px 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.title-mystery-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+/*  border: 3px solid blue;
+*/  margin-top: 50px;
+    margin-bottom: 0px;
     color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 90px;
+
 
 }
 
 
-#start-button:hover {
-    transform: scale(1.1);
-
+li {
+    font-size: 30px;
 }
+
+/*#scoreP1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    font-size: 10vh;
+    color: #333344;
+  border: 3px solid pink;
+}
+
+#scoreP2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+    font-size: 10vh;
+    color: #333344;
+  border: 3px solid pink;
+}*/
+
+
+    
 
 .card-container {
 	display: flex;
     flex-direction: row;
 	justify-content: flex-start;
-  	border: 2px solid yellow;
-
+/*  border: 2px solid yellow;
+*/
 }
 
 
@@ -91,38 +210,204 @@ ul {
 */
 }
 
-#card-facedown {
+
+.cardsontable {
+    display: flex;
+/*  border: 3px solid yellow;
+*/  justify-content: space-around;
+}
+
+#card-container {
+    display: flex;
+/*  border: 3px solid yellow;
+*/  justify-content: space-around;
+}
+
+
+
+.player-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+/*  border: 3px solid blue;
+*/  height: 50%;
+    width: 100%;
+    font-family: 'Comfortaa', cursive;
+    font-size: 40px;
+    color: #014254;
+}
+
+
+.player-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    align-items: center;
+/*  border: 3px solid blue;
+*/  height: 50%;
+    width: 100%;
+    font-family: 'Comfortaa', cursive;
+    font-size: 40px;
+    color: #014254;
+}
+
+
+
+
+img {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    margin: 35px;
-    padding: 20px;
+    margin: 25px;
+    padding: 10px;
     height: auto;
     width: 15%;
-    border-radius: 30px;
+    border-radius: 20px;
+/*  box-shadow: 0 8px 6px -6px black;
+*/
 }
 
 .threeCards {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    margin: 35px;
-    padding: 20px;
+    margin: 25px;
+    padding: 10px;
     height: auto;
     width: 15%;
 }
 
-.choicehl {
-    color: #014254;
-    font-size: 20px;
-}
+
+
 
 .hlbuttons {
     color: #014254;
-    font-size: 20px;
-    border-radius: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    font-family: 'Comfortaa', cursive;
 
 }
+
+.highlowbuttons {
+    display: flex;
+/*  border: 3px solid yellow;
+*/  justify-content: space-around;
+}
+
+
+#Lhigh-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+
+}
+
+#Llow-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+
+}
+
+#Mhigh-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+
+}
+
+#Mlow-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+
+}
+
+#Rhigh-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+}
+
+#Rlow-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+
+}
+
+
+.left-card {
+    display: flex;
+    justify-content: center;
+/*  border: 3px solid red;
+*/  margin: 15px;
+    padding: 15px;
+
+}
+
+
+.middle-card {
+    display: flex;
+    justify-content: center;
+/*  border: 3px solid blue;
+*/  margin: 15px;
+    padding: 15px;
+
+}
+
+.right-card {
+    display: flex;
+    justify-content: center;
+/*  border: 3px solid orange;
+*/  margin: 15px;
+    padding: 15px;
+
+}
+
+
+
+
+#start-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+/*  border: 3px solid lavender;
+*/  align-items: center;
+
+}
+
+
+#start-button {            
+    display: flex;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
+
+}
+
+
+
+
+#start-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+
+
+
+
 

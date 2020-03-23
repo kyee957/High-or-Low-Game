@@ -1,23 +1,12 @@
 
-// Each of the two players are given 3 cards from a standard deck and a deck of cards
-
-
-// Players must decide if their mystery card will be higher or lower 
-
-// Players take turn when a player loses/wins a round. 
-
-// If a player guesses incorrectly, they must restart the round they are currently in. 
-
-// If a player guesses correctly on all 3 cards show on the table, 
-// they will go onto the next round. 
-
-// Game ends when a player is able to pass a total of 3 rounds.
-
-
-// create standard deck of cards
+// =============================================
+//
+// Array of standard deck of cards
+//
+// =============================================
 const myDeck = [
   {
-    name: "spades-two", //spades
+    name: "spades-two", //spades-------------------------------
     value: 2,
     img: "2S.jpeg"
   }, {
@@ -81,7 +70,7 @@ const myDeck = [
     img: "AS.png"
 
   }, {       
-    name: "hearts-two", // Hearts
+    name: "hearts-two", // Hearts -------------------------------
     value: 2,
     img: "2H.jpeg"
 
@@ -146,7 +135,7 @@ const myDeck = [
     img: "AH.jpeg"
 
   }, {
-    name: "diamonds-two", // Diamonds
+    name: "diamonds-two", // Diamonds ---------------------------
     value: 2,
     img: "2D.png"
 
@@ -211,7 +200,7 @@ const myDeck = [
     img: "AD.png"
 
   }, {
-    name: "clubs-two", // Clubs
+    name: "clubs-two", // Clubs -------------------------------
     value: 2,
     img: "2C.jpeg"
 
@@ -279,139 +268,121 @@ const myDeck = [
 ]
 
 
-//first steps 
-//build out the player class
-//    -what does every player have that stays the same?
-//    -what does each player have that is unique?
-//    -does each player need to have a property that tells if it is their turn or not?
 
+// =============================================
+//
+// Create player objects
+//
+// =============================================
 
-//Next steps
-//Build out game functionality, in small pieces, get it working in the console.
+// Build out the player class
+// What does every player have that stays the same?
+// What does each player have that is unique?
+// Does each player need to have a property that tells if it is their turn or not?
 
-//maybe you have a boolean k:v pair that says if the game is active or not
-//so that it switches to active when the start button is pressed
-//and then when it's active, you show the cards. 
-
-//Hint: make a class in your css called 'hidden' and make it visually hide anything
-//  with that class.
-
-
-//buttons that show up for each card. So maybe they're all part of the same div? or whatever helps you get the info of the button, sending to the associated card.
 class Player {
   constructor(name) {
     this.name = name
     this.score = 0
     this.hand = []
-    this.turn = false
   }
-
-
 }
-//at the start of the game, you will changeplayer one's turn to truelike this
-// Fatima.turn = true 
-
-//then at the end of their turn it will become false like this
-// Fatima.turn = false
-//Then player 2 is up, you'll need to change their turn value to true.
-//Nate.turn = true
-
-
-//game.changeTurn is going to be a function that switches the boolean value of the current, and the next playe
-
-// const playerOne = new Player("Fatima")
-// const playerTwo = new Player("Nate")
-// console.log(playerOne);
-// console.log("Fatima's turn is \n", playerOne.turn);
-
-// playerOne.turn = true
-// console.log("NOW, Fatima's turn is \n", playerOne.turn);
-
-// console.log(playerTwo);
 
 
 
 
-//game object
+// =============================================
+// 
+// Game object 
+// 
+// =============================================
 const game = {
-  playing: false,
-  
-
+  playerReady: true,
+  activePlayer: "", //1 is p1 2 is p2
   rounds: 0,
-  match: 0,
-  //players: [], //use this if there are many
   playerOne: null,
   playerTwo: null,
   activeCard: null,
-
+  correctGuess: false,
   deck: Array.from(myDeck), //insert deck of cards into game object
 
-  whoseTurnPlayer: 0,
-
-  
-// track how many phases each player has completed
-
-// this.players[0].name
-//inside a loop you might say this.players[i].name
+// whoseTurnPlayer: playerOne,
 
 
+// =============================================
+// 
+// Begin phases 
+// 
+// =============================================
 
   start: function() {
     console.log("Start button was clicked")
-    // set phase
-
           
-    this.putCardsOnHand(); // deal 3 cards to player 0
-  
-    
-    // deal/set right card -- this needs to be tracked
+    this.putCardsOnHand("playerOne"); 
 
-    // say "click high low to guess"
-    
-    // show buttons 
-      // cycle through cards in this phase -- nextCard() method?
-
-      //find player from name
-  },
-
-  activateCard: function() {
-    //display a deck (could be a single card) face down 
-    const hiddenCardOnDeck = document.querySelector("#hidden-card")
-    const revealCardOnDeck = document.createElement("img");
-          revealCardOnDeck.src = `images/${this.deck[drawCardsForPlayr].img}`
-
-          hiddenCardOnDeck.append(revealCardOnDeck);
-
-  },
-
-      //find player from name
-  nextPlayer: function () {
-    // come back to this later
+    this.drawMysteryCard();
+    this.activePlayer = "playerOne";
+    // console.log("this is scoreP1 \n", scoreP1);
+    // console.log("this is scoreP2 \n", scoreP2);
   },
 
 
 
-// Method for adding players name into the game
+
+// =============================================
+// 
+// Method for adding players name into the game  
+// 
+// =============================================
+
   addNamePlayerOne: function(name) {
-      const newPlyr = new Player(name);
-      this.playerOne = newPlyr;
+      const newPlyr1 = new Player(name);
+      this.playerOne = newPlyr1;
       
-      const newPlayerName = document.createElement("li");
-      newPlayerName.classList.add = "name";
+      const newPlayerOneName = document.createElement("li");
+      newPlayerOneName.classList.add = "name";
 
       console.log(`${name}`)
-      newPlayerName.innerText = `${name}`;
-      const ul = document.querySelector("#name-entry");
-      ul.append(newPlayerName);
+      newPlayerOneName.innerText = `${name}`;
+      const ul = document.querySelector("#name-entry1");
+      ul.append(newPlayerOneName);
     
   },
 
 
 
 
+  addNamePlayerTwo: function(name) {
+      const newPlyr2 = new Player(name);
+      this.playerTwo = newPlyr2;
+      
+      const newPlayerTwoName = document.createElement("li");
+      newPlayerTwoName.classList.add = "name";
 
-  // Method that displays 3 random cards on the table for players to compare their mystery card with.
+      console.log(`${name}`)
+      newPlayerTwoName.innerText = `${name}`;
+      const ul = document.querySelector("#name-entry2");
+      ul.append(newPlayerTwoName);
+    
+
+  },
+
+
+// =============================================
+// 
+// Method that displays 3 random cards on players hand to compare their mystery card/ card in deck with.
+// 
+// =============================================
+
+
   putCardsOnHand: function (playerName) {
+
+      console.log(this[playerName]) 
+      this[playerName].hand = [];
+      const cardOnTable = document.querySelector("#card-container")
+        cardOnTable.innerHTML = ""
+
+      console.log(this[playerName].hand);
       for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
           let drawCardsForPlayr = (Math.floor(Math.random() * this.deck.length))
           console.log('random card:')
@@ -419,8 +390,8 @@ const game = {
           console.log(this.deck[drawCardsForPlayr])
           //work on nextPlayer to return the player instance from the name given
 
-          this.playerOne.hand.push(this.deck[drawCardsForPlayr])
-
+          this[playerName].hand.push(this.deck[drawCardsForPlayr])
+          console.log(this[playerName]);
           //display those three cards face up
           //after the cards are displayed style with css
 
@@ -441,68 +412,305 @@ const game = {
 
 
 
+// =============================================
+// 
+// Method allows player to receive one card from the deck
+// 
+// =============================================
 
 
-  // Method allows player to draw one card from the deck
+
+
   drawMysteryCard: function (playerIndex) {
       for(let i = 0; i < 1; i++){ //loop that draws one card from deck
           let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length)) // random card
-          console.log('you drew card:')
+          console.log('your mystery card:')
           console.log(oneCardFrmDeck)
           console.log(this.deck[oneCardFrmDeck])
           this.activeCard = (this.deck[oneCardFrmDeck])
 
+    }
+  },
+
+
+
+
+// =============================================
+// 
+// Player clicks on H/L buttons to guess card on the deck 
+// 
+// =============================================
+
+
+
+
+  processCardGuessing: function (event) {
+      console.log(event.target.id);
+      console.log(this);
+      console.log(this[this.activePlayer]);
+      console.log(this[this.activePlayer].hand);
+      if (event.target.id === "Lhigh-button") { //LEFT CARD
+        if (this[this.activePlayer].hand[0].value >= this.activeCard.value){
+          this[this.activePlayer].hand[0].correctGuess = true;
+          console.log("correct");
+        } else {
+          console.log("incorrect");
+          this.playerLost();
+        } 
+      } 
+      if (event.target.id === "Llow-button") {
+        if (this[this.activePlayer].hand[0].value <= this.activeCard.value){
+          this[this.activePlayer].hand[0].correctGuess = true;
+          console.log("correct");
+
+        } else {
+          console.log("incorrect");
+          this.playerLost();
+
+        }
+      } 
+      if (event.target.id === "Mhigh-button") { //MIDDLE CARD
+        if (this[this.activePlayer].hand[1].value > this.activeCard.value){
+          this[this.activePlayer].hand[1].correctGuess = true;
+          console.log("correct");
+        } else {
+          console.log("incorrect");
+          this.playerLost();
+
+        }
+      } 
+      if (event.target.id === "Mlow-button") {
+        if (this[this.activePlayer].hand[1].value < this.activeCard.value){
+          this[this.activePlayer].hand[1].correctGuess = true;
+          console.log("correct");
+
+        } else {
+          console.log("incorrect");
+          this.playerLost();
+
+        } 
+      }
+        if (event.target.id === "Rhigh-button") { //RIGHT CARD
+          if (this[this.activePlayer].hand[2].value > this.activeCard.value){
+          this[this.activePlayer].hand[2].correctGuess = true;
+          console.log("correct");
+
+          } else {
+            console.log("incorrect");
+            this.playerLost();
+
+          }
+      } 
+        if (event.target.id === "Rlow-button") {
+          if (this[this.activePlayer].hand[2].value < this.activeCard.value){
+          this[this.activePlayer].hand[2].correctGuess = true;
+          console.log("correct");
+          } else {
+            console.log("incorrect");
+            this.playerLost();
+
+          } 
+      }
+
+
+           this.didPlayerWin();
+  },
+
+// =============================================
+// 
+// Reveal mystery card if player guesses incorrectly
+// 
+// =============================================
+
+
+
+
+  activateCard: function() {
+    //reveal card after 3 cards are guessed, resets for next player 
+    const hiddenCardOnDeck = document.querySelector("#card-facedown")
+    //const revealCardOnDeck = document.createElement("img");
+    // revealCardOnDeck.src = `images/${this.deck[drawCardsForPlayr].img}`
+    console.log("this is the active card", this.activeCard);
+    hiddenCardOnDeck.src = `images/${this.activeCard.img}`;
+    // `<img id="card-facedown" class="hidden-card" src="images/${this.activeCard.img}" alt="hidden-card">`
+    //hiddenCardOnDeck.append(revealCardOnDeck);
+    // if they lost (since they saw the card), switch turns
+  },
+
+
+
+// =============================================
+// 
+// Method that determines if player wins or loses a round
+// 
+// =============================================
+
+  didPlayerWin: function () {
+    let count = 0
+    for(let i = 0; i < this.playerOne.hand.length; i++ ) {
+      if (this.playerOne.hand[i].correctGuess === true) {
+        count++
+      }
+    }
+
+    if (count === this.playerOne.hand.length) {
+      alert("You won the game!")
+      console.log("player wins round!");
 
     }
 
   },
 
-  processCardGuessing: function (event) {
-      console.log(event.target.id);
-      if (event.target.id === "#Lhigh-button") {
-        if (this.playerOne.hand[0].value > this.activeCard.value){
-          console.log("correct");
-        } else {
-          console.log("incorrect");
-        }
-        console.log(this.playerOne.hand[0])
-        console.log(this.activeCard); 
-      } 
-  }
+
+  playerLost: function () {
+    console.log("player has lost");
+    this.activateCard();
+    
+      // const cardOnTable = document.querySelector("#card-container")
+      // cardOnTable.innerHTML = ""
+    
+    // console.log("this is the query selector", cardOnTable);
+    // setTimeout(function() {
+    //   clearInnerHTML()},1000);
+  
+    this.nextPlayer();
+
+    this.drawMysteryCard();
+
+    alert("Guess was wrong. Next player's turn!")
+
+
+      
+},
 
 
 
+
+  playerReady: function () {
+    this.playerReady = false;
+  },
+
+
+
+
+// =============================================
+// 
+// Switch to next player if guessed incorrectly
+// 
+// =============================================
+
+      //find player from name
+  nextPlayer: function () {
+    if(this.activePlayer === "playerOne"){
+      this.activePlayer = "playerTwo"
+      this.putCardsOnHand ("playerTwo")
+
+    } else if(this.activePlayer === "playerTwo"){
+      this.activePlayer = "playerOne"
+      this.putCardsOnHand ("playerOne")
+
+    } else {
+      this.activePlayer = ""
+    }
+    setTimeout(function() {
+      game.flipCardOver()},5000);
+  },
+
+  flipCardOver: function () {
+    const flippedCard = document.querySelector("#card-facedown")
+    
+    flippedCard.src = `images/card-facedown.jpeg`;
+  },
+
+//at the start of the game, you will changeplayer one's turn to truelike this
+// Fatima.turn = true 
+
+//then at the end of their turn it will become false like this
+// Fatima.turn = false
+//Then player 2 is up, you'll need to change their turn value to true.
+//Nate.turn = true
+
+// const playerOne = new Player("Fatima")
+// const playerTwo = new Player("Nate")
+// console.log(playerOne);
+// console.log("Fatima's turn is \n", playerOne.turn);
+
+// playerOne.turn = true
+// console.log("NOW, Fatima's turn is \n", playerOne.turn);
+
+// console.log(playerTwo);
+
+//game.changeTurn is going to be a function that switches the boolean value of the current, and the next playe
+
+
+
+// =============================================
+// 
+// A player guesses 3 cards correctly = game is completed
+// 
+// =============================================
+
+
+//   winner: function(){
+//          if(this.playerOne.hand[0].correctGuess === true & this.playerOne.hand[1].correctGuess === true & this.playerOne.hand[2].correctGuess === true) {
+//           console.log(`${name} wins the game!`);
+//         } else {
+//           console.log('next player is up');
+//         }
+    // }
 
 
 }
 
 
+// =============================================
+// 
+// Event listeners for start button to hand out 3 cards to player
+// 
+// =============================================
 
 
-// Event listeners 
 const startButton = document.querySelector("#start-button")
 startButton.addEventListener("click", (event) => {
   game.start()
 });
 
-// -------------------------------------------------------------------------
+// =============================================
+// 
+// Event listeners for printing player name on browser
+// 
+// =============================================
 
-// Players name appearing on screen
+// const addPlayerOneButton = document.querySelector("#name-adding-form")
+const p1Button = document.querySelector("#AddName1")
 
-const addPlayerButton = document.querySelector("#name-adding-form")
-
-addPlayerButton.addEventListener("submit", (event) => {
-  const firstName = document.querySelector("#firstName");
-  //console.log(firstName.value)
+p1Button.addEventListener("click", (event) => {
+  event.preventDefault();
+  const firstName1 = document.querySelector("#firstName1");
   
   //console.log("this is the event target from the name form\n", event.target);
-  game.addNamePlayerOne(firstName.value)
+  game.addNamePlayerOne(firstName1.value)
+});
+
+
+
+// const addPlayerTwoButton = document.querySelector("#name-adding-form")
+const p2Form = document.querySelector("#p2Form")
+p2Form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const firstName2 = document.querySelector("#firstName2");
+  
+  //console.log("this is the event target from the name form\n", event.target);
+  game.addNamePlayerTwo(firstName2.value)
 });
 
 // -------------------------------------------------------------------------
 
-// High and Low buttons draw one card from the deck
+// =============================================
+// 
+// Event listeners for H/L buttons to draw one card from the deck
+// 
+// =============================================
 
 
 // Left card
@@ -513,7 +721,7 @@ leftHighButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("high button was clicked from left card")
   game.processCardGuessing(event)
-  game.drawMysteryCard()
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
@@ -524,8 +732,9 @@ const leftLowButtonClicked = document.querySelector("#Llow-button")
 leftLowButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("low button was clicked from left card")
-  
-  game.drawMysteryCard()
+  game.processCardGuessing(event)
+
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
@@ -538,8 +747,9 @@ const middleHighButtonClicked = document.querySelector("#Mhigh-button")
 middleHighButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("high button was clicked from middle card")
+  game.processCardGuessing(event)
   
-  game.drawMysteryCard()
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
@@ -550,8 +760,9 @@ const middleLowButtonClicked = document.querySelector("#Mlow-button")
 middleLowButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("low button was clicked from middle card")
-  
-  game.drawMysteryCard()
+   game.processCardGuessing(event)
+ 
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
@@ -564,8 +775,9 @@ const rightHighButtonClicked = document.querySelector("#Rhigh-button")
 rightHighButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("high button was clicked from right card")
-  
-  game.drawMysteryCard()
+   game.processCardGuessing(event)
+ 
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
@@ -576,42 +788,15 @@ const rightLowButtonClicked = document.querySelector("#Rlow-button")
 rightLowButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("low button was clicked from right card")
+  game.processCardGuessing(event)
   
-  game.drawMysteryCard()
+  // game.drawMysteryCard()
   event.preventDefault();
 });
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-//////////////////////////
-//BELOW THE GAME OBJECT
-//PUT EVENT LISTENERS
-//one for the form input,
-//eventually you'll need others for other parts of the game. e.g. start button and other stuff
-
-
-
-
-// add event listener
-// use class to create objects
-// push those to game player Array
-// use array to compare values to each player
-
-
-// High or low button functioning
-// Players can draw cards from deck
-// Moving from phase to phase
 
 
 
