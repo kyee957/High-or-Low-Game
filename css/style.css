@@ -91,8 +91,8 @@ ul {
     padding: 10px 20px 10px 10px;
     color: #014254;
     font-size: 15px;
-/*  border: 1px solid grey;
-*/  font-family: 'Comfortaa', cursive;
+    border: 2px solid grey;
+    font-family: 'Comfortaa', cursive;
 
 }
 #AddName1, #AddName2 {
@@ -109,6 +109,18 @@ ul {
 /*    text-shadow: 1px 1px 2px black;
 */}
 
+
+#AddName1:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px green, 0 0 15px purple;
+
+}
+
+#AddName2:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px green, 0 0 15px purple;
+
+}
 
 h4 {
     font-family: 'Amatic SC', cursive;
@@ -295,13 +307,55 @@ img {
     display: flex;
 /*  border: 3px solid yellow;
 */  justify-content: space-around;
+
 }
 
+
+#Lhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+#Llow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+#Mhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+#Mlow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+#Rhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
+#Rlow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
+
+}
 
 #Lhigh-button {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 
 }
 
@@ -309,6 +363,16 @@ img {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 
 }
 
@@ -316,6 +380,16 @@ img {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 
 }
 
@@ -323,6 +397,16 @@ img {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 
 }
 
@@ -330,12 +414,32 @@ img {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 }
 
 #Rlow-button {
     display: flex;
     justify-content: space-around;
     margin: 10%;
+    border: 2px solid #014254;
+    padding: 10px 20px;
+    color: #014254;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #9370DB;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin: 10px 0px 50px 0px;
+
 
 }
 
@@ -390,7 +494,7 @@ img {
     color: #014254;
     font-size: 30px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: coral;
     color: white;
     text-shadow: 2px 2px 3px black;
     margin: 10px 0px 50px 0px;
@@ -406,6 +510,9 @@ img {
     text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
 
 }
+
+
+
 
 
 

@@ -555,7 +555,7 @@ const game = {
 
     if (count === this.playerOne.hand.length) {
       alert("You won the game!")
-      console.log("player wins round!");
+      console.log("player wins game!");
 
     }
 
