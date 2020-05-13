@@ -4,7 +4,7 @@
 Title: High or Low
 
 Description:
-A 2 player game where players races to be the first to successfully guess their way past three cards.
+A 2 player game where players race to be the first to successfully guess their way past three cards.
 
 Game Rules:
 
