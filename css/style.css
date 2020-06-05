@@ -90,7 +90,7 @@ ul {
     display: flex;
     padding: 10px 20px 10px 10px;
     color: #014254;
-    font-size: 15px;
+    font-size: 25px;
     border: 2px solid grey;
     font-family: 'Comfortaa', cursive;
 
@@ -100,7 +100,7 @@ ul {
     border: 2px solid #9ACD32;
     padding: 5px 15px;
     color: #014254;
-    font-size: 15px;
+    font-size: 25px;
     cursor: pointer;
     background-color: #9ACD32;
     color: white;
@@ -127,7 +127,7 @@ h4 {
     align-items: center;
     flex-direction: column;
     font-family: 'Amatic SC', cursive;
-    font-size: 40px;
+    font-size: 80px;
 /*    border: 2px solid yellow;
 */  margin-top: 0px;
     margin-bottom: 10px;
@@ -140,7 +140,7 @@ h4 {
     align-items: center;
     flex-direction: column;
 /*    border: 3px solid blue;
-*/  font-size: 15px;
+*/  font-size: 30px;
     letter-spacing: .5px;
     color: #014254;
     font-weight: 900;
@@ -465,7 +465,7 @@ li {
     border: 2px solid #014254;
     padding: 10px 20px;
     color: #014254;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
     background-color: coral;
     color: white;
@@ -475,7 +475,9 @@ li {
 
 }
 
-
+p.description-above-start {
+    font-size: 30px;
+}
 
 
 #start-button:hover {
@@ -546,7 +548,7 @@ li {
         display: flex;
         padding: 10px 20px 10px 10px;
         color: #014254;
-        font-size: 25px;
+        font-size: 30px;
         border: 2px solid grey;
         font-family: 'Comfortaa', cursive;
 
@@ -556,7 +558,7 @@ li {
         border: 2px solid #9ACD32;
         padding: 5px 15px;
         color: #014254;
-        font-size: 25px;
+        font-size: 30px;
         cursor: pointer;
         background-color: #9ACD32;
         color: white;
