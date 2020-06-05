@@ -112,17 +112,20 @@ ul {
 
 #AddName1:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px black, 0 0 35px green, 0 0 15px purple;
+    text-shadow: 2px 2px 2px black, 0 0 5px green, 0 0 5px purple;
 
 }
 
 #AddName2:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px black, 0 0 35px green, 0 0 15px purple;
+    text-shadow: 2px 2px 2px black, 0 0 5px green, 0 0 5px purple;
 
 }
 
 h4 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     font-family: 'Amatic SC', cursive;
     font-size: 40px;
 /*    border: 2px solid yellow;
@@ -133,20 +136,11 @@ h4 {
 
 }
 .mystery-card {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-/*    border: 3px solid red;
-*/}
-
-
-.lastinstructions {
     display: flex;
     align-items: center;
     flex-direction: column;
 /*    border: 3px solid blue;
-*/    font-size: 15px;
+*/  font-size: 15px;
     letter-spacing: .5px;
     color: #014254;
     font-weight: 900;
@@ -172,30 +166,8 @@ h4 {
 
 
 li {
-    font-size: 30px;
+    font-size: 40px;
 }
-
-/*#scoreP1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50%;
-    width: 50%;
-    font-size: 10vh;
-    color: #333344;
-  border: 3px solid pink;
-}
-
-#scoreP2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50%;
-    width: 50%;
-    font-size: 10vh;
-    color: #333344;
-  border: 3px solid pink;
-}*/
 
 
     
@@ -267,14 +239,14 @@ li {
 
 
 
-img {
+#card-facedown.hidden-card {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin: 25px;
     padding: 10px;
-    height: auto;
+    height: 50%;
     width: 15%;
     border-radius: 20px;
 /*  box-shadow: 0 8px 6px -6px black;
@@ -288,8 +260,9 @@ img {
     justify-content: flex-start;
     margin: 25px;
     padding: 10px;
-    height: auto;
+    height: 50%;
     width: 15%;
+    border-radius: 16px;
 }
 
 
@@ -507,11 +480,93 @@ img {
 
 #start-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px black, 0 0 35px lavender, 0 0 15px purple;
-
+    text-shadow: 2px 2px 2px black, 0 0 5px green, 0 0 5px purple;
 }
 
 
+@media only screen  and (min-width : 1224px) {
+    img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin: 25px;
+        padding: 10px;
+        height: auto;
+        width: 15%;
+        border-radius: 20px;
+    }
+
+    li {
+        font-size: 50px;
+    }
+
+    #start-button {            
+        display: flex;
+        border: 2px solid #014254;
+        padding: 10px 20px;
+        color: #014254;
+        font-size: 45px;
+        cursor: pointer;
+        background-color: coral;
+        color: white;
+        text-shadow: 2px 2px 3px black;
+        margin: 10px 0px 50px 0px;
+    }
+
+    h4 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Amatic SC', cursive;
+        font-size: 55px;
+    /*    border: 2px solid yellow;
+    */  margin-top: 0px;
+        margin-bottom: 10px;
+        color: #014254;
+
+    }
+
+
+
+    .mystery-card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 20px;
+        letter-spacing: .5px;
+        color: #014254;
+        font-weight: 900;
+        padding: 0px 0px 20px 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #firstName1, #firstName2 {
+        display: flex;
+        padding: 10px 20px 10px 10px;
+        color: #014254;
+        font-size: 25px;
+        border: 2px solid grey;
+        font-family: 'Comfortaa', cursive;
+
+    }
+    #AddName1, #AddName2 {
+        display: flex;
+        border: 2px solid #9ACD32;
+        padding: 5px 15px;
+        color: #014254;
+        font-size: 25px;
+        cursor: pointer;
+        background-color: #9ACD32;
+        color: white;
+        font-family: 'Comfortaa', cursive;
+    }
+
+
+
+
+}
 
 
 
