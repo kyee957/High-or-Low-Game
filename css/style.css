@@ -145,7 +145,7 @@ h4 {
     align-items: center;
     flex-direction: column;
 /*    border: 3px solid blue;
-*/  font-size: 60px;
+*/  font-size: 55px;
     letter-spacing: .5px;
     color: #014254;
     font-weight: 900;
@@ -179,30 +179,6 @@ li {
 }
 
 
-    
-
-.card-container {
-	display: flex;
-    flex-direction: row;
-	justify-content: flex-start;
-/*  border: 2px solid yellow;
-*/
-}
-
-
-.card {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	margin: 35px;
-	padding: 20px;
-	height: auto;
-	width: 15%;
-/*	border: 3px solid pink;
-*/
-}
-
 
 .cardsontable {
     display: flex;
@@ -215,7 +191,7 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 28%;
+    width: 40%;
 /*  border: 3px solid yellow;
 */
 }
@@ -305,32 +281,32 @@ li {
 
 #Lhigh-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 35px lime, 0 0 15px lightsteelblue;
 
 }
 #Llow-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 5px lightpink;
 
 }
 #Mhigh-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 35px lime, 0 0 15px lightsteelblue;
 
 }
 #Mlow-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 5px lightpink;
 
 }
 #Rhigh-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 35px lime, 0 0 15px lightsteelblue;
 
 }
 #Rlow-button:hover {
     transform: scale(1.1);
-    text-shadow: 2px 2px 3px #014254, 0 0 35px lavender, 0 0 15px purple;
+    text-shadow: 2px 2px 3px #014254, 0 0 5px lightpink;
 
 }
 
@@ -342,7 +318,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #9ACD32;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 50px 0px;
@@ -359,7 +335,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #C32148;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 50px 0px;
@@ -376,7 +352,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #9ACD32;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 50px 0px;
@@ -393,7 +369,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #C32148;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 50px 0px;
@@ -410,7 +386,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #9ACD32;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 50px 0px;
@@ -425,7 +401,7 @@ li {
     color: #014254;
     font-size: 70px;
     cursor: pointer;
-    background-color: #9370DB;
+    background-color: #C32148;
     color: white;
     text-shadow: 2px 2px 3px #014254;
     margin: 10px 0px 10px 0px;
