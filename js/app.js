@@ -321,7 +321,7 @@ const game = {
     this.putCardsOnHand("playerOne"); 
 
     this.drawMysteryCard();
-    this.activePlayer = "playerOne";
+    this.activePlayer = "playerOne"
     // console.log("this is scoreP1 \n", scoreP1);
     // console.log("this is scoreP2 \n", scoreP2);
   },
@@ -513,7 +513,9 @@ const game = {
       }
 
 
-           this.didPlayerWin();
+          this.didPlayerOneWin();
+          this.didPlayerTwoWin();
+
   },
 
 // =============================================
@@ -545,17 +547,35 @@ const game = {
 // 
 // =============================================
 
-  didPlayerWin: function () {
-    let count = 0
+  didPlayerOneWin: function () {
+    let countP1 = 0
     for(let i = 0; i < this.playerOne.hand.length; i++ ) {
       if (this.playerOne.hand[i].correctGuess === true) {
-        count++
+        countP1++
       }
     }
 
-    if (count === this.playerOne.hand.length) {
-      alert("You won the game!")
-      console.log("player wins game!");
+    if (countP1 === this.playerOne.hand.length) {
+      alert(`${this.playerOne.name} wins the game!`)
+      console.log(`${this.playerOne.name} wins the game!`);
+
+    }
+
+  },
+
+
+
+    didPlayerTwoWin: function () {
+    let countP2 = 0
+    for(let i = 0; i < this.playerTwo.hand.length; i++ ) {
+      if (this.playerTwo.hand[i].correctGuess === true) {
+        countP2++
+      }
+    }
+
+    if (countP2 === this.playerTwo.hand.length) {
+      alert(`${this.playerTwo.name} wins the game!`)
+      console.log(`${this.playerTwo.name} wins the game!`);
 
     }
 
@@ -576,11 +596,6 @@ const game = {
     this.nextPlayer();
 
     this.drawMysteryCard();
-
-    alert("Guess was wrong. Next player's turn!")
-
-
-      
 },
 
 
@@ -604,10 +619,13 @@ const game = {
     if(this.activePlayer === "playerOne"){
       this.activePlayer = "playerTwo"
       this.putCardsOnHand ("playerTwo")
+      alert(`Wrong guess. Now it's ${this.playerTwo.name} turn!`);
+
 
     } else if(this.activePlayer === "playerTwo"){
       this.activePlayer = "playerOne"
       this.putCardsOnHand ("playerOne")
+      alert(`Wrong guess. Now it's ${this.playerOne.name} turn!`);
 
     } else {
       this.activePlayer = ""
