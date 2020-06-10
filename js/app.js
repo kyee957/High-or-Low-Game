@@ -322,7 +322,7 @@ const game = {
 
     this.drawMysteryCard();
     this.activePlayer = "playerOne"
-    alert(`Looks like it's your turn, ${this.playerOne.name}!`)
+    alert(`Looks like it's your turn, ${this.playerOne.name}.\nScroll down and start guessing!`)
     // console.log("this is scoreP1 \n", scoreP1);
     // console.log("this is scoreP2 \n", scoreP2);
   },
@@ -454,7 +454,7 @@ const game = {
         if (this[this.activePlayer].hand[0].value >= this.activeCard.value){
           this[this.activePlayer].hand[0].correctGuess = true;
           console.log("correct");
-          alert("awesome, keep it up!")
+          alert("Awesome, keep it up! Head down to Round 2!")
 
         } else {
           console.log("incorrect");
@@ -465,7 +465,7 @@ const game = {
         if (this[this.activePlayer].hand[0].value <= this.activeCard.value){
           this[this.activePlayer].hand[0].correctGuess = true;
           console.log("correct");
-          alert("Easy peasy!")
+          alert("Easy peasy! Head down to Round 2!")
 
 
         } else {
@@ -478,7 +478,7 @@ const game = {
         if (this[this.activePlayer].hand[1].value > this.activeCard.value){
           this[this.activePlayer].hand[1].correctGuess = true;
           console.log("correct");
-          alert("That's right, one more to go!")
+          alert("Correct! Go to Round 3!")
 
         } else {
           console.log("incorrect");
@@ -490,7 +490,7 @@ const game = {
         if (this[this.activePlayer].hand[1].value < this.activeCard.value){
           this[this.activePlayer].hand[1].correctGuess = true;
           console.log("correct");
-          alert("woot woot!")
+          alert("Correct! Go to Round 3!")
 
 
         } else {
