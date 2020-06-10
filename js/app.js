@@ -322,6 +322,7 @@ const game = {
 
     this.drawMysteryCard();
     this.activePlayer = "playerOne"
+    alert(`Looks like it's your turn, ${this.playerOne.name}!`)
     // console.log("this is scoreP1 \n", scoreP1);
     // console.log("this is scoreP2 \n", scoreP2);
   },
@@ -453,6 +454,8 @@ const game = {
         if (this[this.activePlayer].hand[0].value >= this.activeCard.value){
           this[this.activePlayer].hand[0].correctGuess = true;
           console.log("correct");
+          alert("awesome, keep it up!")
+
         } else {
           console.log("incorrect");
           this.playerLost();
@@ -462,6 +465,8 @@ const game = {
         if (this[this.activePlayer].hand[0].value <= this.activeCard.value){
           this[this.activePlayer].hand[0].correctGuess = true;
           console.log("correct");
+          alert("Easy peasy!")
+
 
         } else {
           console.log("incorrect");
@@ -473,6 +478,8 @@ const game = {
         if (this[this.activePlayer].hand[1].value > this.activeCard.value){
           this[this.activePlayer].hand[1].correctGuess = true;
           console.log("correct");
+          alert("That's right, one more to go!")
+
         } else {
           console.log("incorrect");
           this.playerLost();
@@ -483,6 +490,8 @@ const game = {
         if (this[this.activePlayer].hand[1].value < this.activeCard.value){
           this[this.activePlayer].hand[1].correctGuess = true;
           console.log("correct");
+          alert("woot woot!")
+
 
         } else {
           console.log("incorrect");
@@ -513,8 +522,7 @@ const game = {
       }
 
 
-          this.didPlayerOneWin();
-          this.didPlayerTwoWin();
+          this.didPlayerWin();
 
   },
 
@@ -547,26 +555,12 @@ const game = {
 // 
 // =============================================
 
-  didPlayerOneWin: function () {
+  didPlayerWin: function () {
     let countP1 = 0
-    for(let i = 0; i < this.playerOne.hand.length; i++ ) {
-      if (this.playerOne.hand[i].correctGuess === true) {
-        countP1++
-      }
-    }
-
-    if (countP1 === this.playerOne.hand.length) {
-      alert(`${this.playerOne.name} wins the game!`)
-      console.log(`${this.playerOne.name} wins the game!`);
-
-    }
-
-  },
-
-
-
-    didPlayerTwoWin: function () {
     let countP2 = 0
+
+
+
     for(let i = 0; i < this.playerTwo.hand.length; i++ ) {
       if (this.playerTwo.hand[i].correctGuess === true) {
         countP2++
@@ -579,7 +573,23 @@ const game = {
 
     }
 
+
+    for(let i = 0; i < this.playerOne.hand.length; i++ ) {
+      if (this.playerOne.hand[i].correctGuess === true) {
+        countP1++
+      }
+    }
+
+    if (countP1 === this.playerOne.hand.length) {
+      alert(`${this.playerOne.name} wins the game!`)
+      console.log(`${this.playerOne.name} wins the game!`);
+
+    }
+
+
   },
+
+
 
 
   playerLost: function () {
@@ -604,8 +614,6 @@ const game = {
   playerReady: function () {
     this.playerReady = false;
   },
-
-
 
 
 // =============================================
@@ -639,43 +647,6 @@ const game = {
     
     flippedCard.src = `images/card-facedown.jpeg`;
   },
-
-//at the start of the game, you will changeplayer one's turn to truelike this
-// Fatima.turn = true 
-
-//then at the end of their turn it will become false like this
-// Fatima.turn = false
-//Then player 2 is up, you'll need to change their turn value to true.
-//Nate.turn = true
-
-// const playerOne = new Player("Fatima")
-// const playerTwo = new Player("Nate")
-// console.log(playerOne);
-// console.log("Fatima's turn is \n", playerOne.turn);
-
-// playerOne.turn = true
-// console.log("NOW, Fatima's turn is \n", playerOne.turn);
-
-// console.log(playerTwo);
-
-//game.changeTurn is going to be a function that switches the boolean value of the current, and the next playe
-
-
-
-// =============================================
-// 
-// A player guesses 3 cards correctly = game is completed
-// 
-// =============================================
-
-
-//   winner: function(){
-//          if(this.playerOne.hand[0].correctGuess === true & this.playerOne.hand[1].correctGuess === true & this.playerOne.hand[2].correctGuess === true) {
-//           console.log(`${name} wins the game!`);
-//         } else {
-//           console.log('next player is up');
-//         }
-    // }
 
 
 }

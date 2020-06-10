@@ -22,7 +22,7 @@
 		<p>Press "Start" button to begin game.</p>
 		<p>Three cards will be given to each player.</p>
 		<p>Guess if card is "higher" or "lower" than mystery card.</p>
-		<p>Player that guesses all three cards correctly wins.</p>
+		<p>Player that correctly guesses all three cards wins.</p>
 	</div>
 
 <!-- player's enter name into this form -->
@@ -138,14 +138,17 @@
 
 	<div class="highlowbuttons">
 		<div class="left-card">
+			<p>Round 1:</p>
 	        <input class="hlbuttons" type="button" id="Lhigh-button" class="btn" value="high">
 	        <input class="hlbuttons" type="button" id="Llow-button" class="btn" value="low">
 	    </div>
 	    <div class="middle-card">
+		   	<p>Round 2:</p>
 	        <input class="hlbuttons" type="button" id="Mhigh-button" class="btn" value="high">
 	        <input class="hlbuttons" type="button" id="Mlow-button" class="btn" value="low">
 	    </div>
 	    <div class="right-card">
+		   	<p>Round 3:</p>
 	        <input class="hlbuttons" type="button" id="Rhigh-button" class="btn" value="high">
 	        <input class="hlbuttons" type="button" id="Rlow-button" class="btn" value="low">
 	    </div>
@@ -153,7 +156,7 @@
 	</div>
 
 	<footer>
-      <p>Copyright Yeezilla Inc. © 2020. All rights reserved</p>
+      <p id="copyright">Copyright Yeezilla Inc. © 2020. All rights reserved</p>
     </footer>
 
 	<script src="js/app.js"></script>
