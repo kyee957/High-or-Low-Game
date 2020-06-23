@@ -90,9 +90,6 @@ p {
     margin: 5px 0px;
 }
 
-ul {
-    list-style-type: none;
-}
 
 
 #name-adding-form {
@@ -106,6 +103,9 @@ ul {
 }
 
 
+ul {
+    list-style-type: none;
+}
 
 #p1Form {
     margin-bottom: 50px;
@@ -135,9 +135,7 @@ ul {
     background-color: #00a2ed;
     color: #ffffff;
     font-family: 'Amatic SC', cursive;
-
-/*    text-shadow: 1px 1px 2px black;
-*/}
+}
 
 
 
@@ -302,7 +300,7 @@ li {
     width: 100px;
     height: auto;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .threeCards {
@@ -314,7 +312,7 @@ li {
     width: 100px;
     height: auto; 
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 
@@ -472,8 +470,8 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 34px 10px 30px 10px;
-    padding: 34px 10px 30px 10px;
+    margin: 34px 10px 29px 10px;
+    padding: 34px 10px 29px 10px;
 
 }
 
@@ -483,8 +481,8 @@ li {
     flex-direction: column;
     justify-content: center;
 /*  border: 3px solid blue;
-*/  margin: 10px 10px 7px 10px;
-    padding: 10px 10px 7px 10px;
+*/  margin: 11px 10px 6px 10px;
+    padding: 11px 10px 6px 10px;
 
 }
 
@@ -493,8 +491,8 @@ li {
     justify-content: center;
     flex-direction: column;
 /*  border: 3px solid orange;
-*/  margin: 32px 10px 10px 10px;
-    padding: 32px 10px 10px 10px;
+*/  margin: 34px 10px 9px 10px;
+    padding: 34px 10px 9px 10px;
 
 }
 
@@ -513,7 +511,7 @@ footer {
 
 #copyright {
     display: flex;
-    flex-direction: col;
+    flex-direction: column;
     align-items: center;
     width: 250px;
     height: auto;
@@ -526,18 +524,532 @@ footer {
 
 @media screen and (min-width: 600px) {
 
+html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    margin: 0;
+    height: auto;
+    font-family: 'Amatic SC', cursive;
+    width: 100%;
+    height: auto;
+}
 
 
+
+
+/* High or Low title */
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 20em;
+    color: #C32148;
+    font-family: 'Amatic SC', cursive;
+    margin: 0px 0px;
+
+}
+
+
+
+#or-word {
+    font-size: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #000000;
+
+}
+
+
+h4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 20px;
+
+}
+
+.mystery-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    color: #000000;
+    padding: 0px 0px 20px 0px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: auto;
+    line-height: 50px;
+    word-spacing: .5px;
+    font-size: 35px;
+    margin: 0px 0px;
+}
+
+
+
+#name-adding-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    width: 100%;
+    height: auto;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+#p1Form {
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+#p2Form {
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+#firstName1, #firstName2 {
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    color: #000000;
+    font-size: 40px;
+    border: 3px solid black;
+    font-family: 'Amatic SC', cursive;
+
+}
+#AddName1, #AddName2 {
+    display: flex;
+    border: 3px solid #00a2ed;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #000000;
+    font-size: 35px;
+    cursor: pointer;
+    background-color: #00a2ed;
+    color: #ffffff;
+    font-family: 'Amatic SC', cursive;
+}
+
+
+
+#AddName1:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 2px #000000, 0 0 5px green, 0 0 5px purple;
+
+}
+
+#AddName2:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 2px #000000, 0 0 5px green, 0 0 5px purple;
+
+}
+
+
+
+
+p.description-above-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+#start-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+
+#start-button {            
+    display: flex;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #000000;
+    font-size: 100px;
+    cursor: pointer;
+    background-color: coral;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
 
 
 }
 
 
 
-@media screen and (min-width: 801px) {
+#start-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 2px #000000, 0 0 5px green, 0 0 5px purple;
+}
+
+.cardsontable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.player-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 3em;
+    font-family: 'Amatic SC', cursive;
+    color: #000000;
+}
+
+
+.player-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 3em;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 100px;
+    color: #000000;
+}
+
+p.name-player1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em; 
+}
+
+p.name-player2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em; 
+}
+
+.title-mystery-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+    color: #000000;
+    font-family: 'Amatic SC', cursive;
+    font-size: 65px;
 
 
 }
+
+
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2em;
+    padding-right: 41px;
+}
+
+
+
+
+#card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 40%;
+/*  border: 3px solid yellow;
+*/
+}
+
+.cards-with-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.round {
+    width: 150px;
+    height: auto;
+    font-size: 45px;
+}
+
+
+
+
+
+#card-facedown.hidden-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+.threeCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 100px 25px 25px 25px;
+    width: 250px;
+    height: auto; 
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+
+
+
+.hlbuttons {
+    color: #000000;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: 'Amatic SC', cursive;
+
+}
+
+.highlowbuttons {
+    display: inline-flex;
+    flex-direction: row;
+    width: 120px;
+    height: auto;
+    justify-content: space-around;
+}
+
+
+#Lhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 35px lime, 0 0 15px lightsteelblue;
+
+}
+#Llow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 5px lightpink;
+
+}
+#Mhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 35px lime, 0 0 15px lightsteelblue;
+
+}
+#Mlow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 5px lightpink;
+
+}
+#Rhigh-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 35px lime, 0 0 15px lightsteelblue;
+
+}
+#Rlow-button:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 3px #000000, 0 0 5px lightpink;
+
+}
+
+#Lhigh-button {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #51cd32;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+
+}
+
+#Llow-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #C32148;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+
+}
+
+#Mhigh-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #51cd32;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+
+}
+
+#Mlow-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #C32148;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+
+}
+
+#Rhigh-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #51cd32;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+}
+
+#Rlow-button {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #C32148;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    margin: 10px 0px 10px 0px;
+
+
+}
+
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 50px 0px 0px;
+    padding: 0px 50px 0px 0px;
+}
+
+
+.middle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 26px 0px 26px;
+    padding: 0px 26px 0px 26px;
+}
+
+.right-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 0px 0px 50px;
+    padding: 0px 0px 0px 50px;
+
+}
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    color: #000000;
+    margin-top: 100px;
+}
+
+#copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: auto;
+    font-size: 25px;
+
+}
+
+}
+
+
+
 
 
 
