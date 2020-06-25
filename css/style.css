@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     align-items: center;
     scroll-behavior: smooth;
-    background-color: #ffffff;
+    background-color: #edffff;
 	margin: 0;
 	height: auto;
     font-family: 'Amatic SC', cursive;
@@ -536,7 +536,7 @@ body {
     flex-direction: column;
     align-items: center;
     scroll-behavior: smooth;
-    background-color: #ffffff;
+    background-color: #edffff;
     margin: 0;
     height: auto;
     font-family: 'Amatic SC', cursive;

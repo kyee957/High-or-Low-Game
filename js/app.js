@@ -454,7 +454,7 @@ const game = {
         if (this[this.activePlayer].hand[0].value >= this.activeCard.value){
           this[this.activePlayer].hand[0].correctGuess = true;
           console.log("correct");
-          alert("Awesome, keep it up! Head down to Round 2!")
+          alert("Awesome, keep it up! Head over to Round 2!")
 
         } else {
           console.log("incorrect");
