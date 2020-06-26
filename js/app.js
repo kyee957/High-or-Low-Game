@@ -298,7 +298,7 @@ class Player {
 // =============================================
 const game = {
   playerReady: true,
-  activePlayer: "", //1 is p1 2 is p2
+  activePlayer: null, //1 is p1 2 is p2
   rounds: 0,
   playerOne: null,
   playerTwo: null,
@@ -317,16 +317,14 @@ const game = {
 
   start: function() {
     console.log("Start button was clicked")
-          
+        
     this.putCardsOnHand("playerOne"); 
-
     this.drawMysteryCard();
-    this.activePlayer = "playerOne"
+    this.activePlayer = this.playerOne;
     alert(`Looks like it's your turn, ${this.playerOne.name}.\nScroll down and start guessing!`)
     // console.log("this is scoreP1 \n", scoreP1);
     // console.log("this is scoreP2 \n", scoreP2);
   },
-
 
 
 
@@ -337,16 +335,16 @@ const game = {
 // =============================================
 
   addNamePlayerOne: function(name) {
-      const newPlyr1 = new Player(name);
-      this.playerOne = newPlyr1;
+    const newPlyr1 = new Player(name);
+    this.playerOne = newPlyr1;
       
-      const newPlayerOneName = document.createElement("li");
-      newPlayerOneName.classList.add = "name";
+    const newPlayerOneName = document.createElement("li");
+    newPlayerOneName.classList.add = "name";
 
-      console.log(`${name}`)
-      newPlayerOneName.innerText = `${name}`;
-      const ul = document.querySelector("#name-entry1");
-      ul.append(newPlayerOneName);
+    console.log(`${name}`)
+    newPlayerOneName.innerText = `${name}`;
+    const ul = document.querySelector("#name-entry1");
+    ul.append(newPlayerOneName);
     
   },
 
@@ -354,16 +352,16 @@ const game = {
 
 
   addNamePlayerTwo: function(name) {
-      const newPlyr2 = new Player(name);
-      this.playerTwo = newPlyr2;
+    const newPlyr2 = new Player(name);
+    this.playerTwo = newPlyr2;
       
-      const newPlayerTwoName = document.createElement("li");
-      newPlayerTwoName.classList.add = "name";
+    const newPlayerTwoName = document.createElement("li");
+    newPlayerTwoName.classList.add = "name";
 
-      console.log(`${name}`)
-      newPlayerTwoName.innerText = `${name}`;
-      const ul = document.querySelector("#name-entry2");
-      ul.append(newPlayerTwoName);
+    console.log(`${name}`)
+    newPlayerTwoName.innerText = `${name}`;
+    const ul = document.querySelector("#name-entry2");
+    ul.append(newPlayerTwoName);
     
 
   },
@@ -378,35 +376,35 @@ const game = {
 
   putCardsOnHand: function (playerName) {
 
-      console.log(this[playerName]) 
-      this[playerName].hand = [];
+    console.log(this[playerName]) 
+    this[playerName].hand = [];
+    const cardOnTable = document.querySelector("#card-container")
+      cardOnTable.innerHTML = ""
+
+    console.log(this[playerName].hand);
+    for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
+      let drawCardsForPlayr = (Math.floor(Math.random() * this.deck.length))
+      console.log('random card:')
+      console.log(drawCardsForPlayr)
+      console.log(this.deck[drawCardsForPlayr])
+      //work on nextPlayer to return the player instance from the name given
+
+      this[playerName].hand.push(this.deck[drawCardsForPlayr])
+      console.log(this[playerName]);
+      //display those three cards face up
+      //after the cards are displayed style with css
+
+      //select the card-container div by id
       const cardOnTable = document.querySelector("#card-container")
-        cardOnTable.innerHTML = ""
 
-      console.log(this[playerName].hand);
-      for(let i = 0; i < 3; i++){ //draw 3 cards to playerOne and playerTwo, randomize
-          let drawCardsForPlayr = (Math.floor(Math.random() * this.deck.length))
-          console.log('random card:')
-          console.log(drawCardsForPlayr)
-          console.log(this.deck[drawCardsForPlayr])
-          //work on nextPlayer to return the player instance from the name given
+      //create an image tag to be appended with this.deck[drawCardsForPlayr]
+      const cardOneOnTable = document.createElement("img");
+      cardOneOnTable.src = `images/${this.deck[drawCardsForPlayr].img}`
+      cardOneOnTable.classList.add("threeCards")
+      cardOnTable.append(cardOneOnTable);
+      this.deck.splice(drawCardsForPlayr, 1)
 
-          this[playerName].hand.push(this.deck[drawCardsForPlayr])
-          console.log(this[playerName]);
-          //display those three cards face up
-          //after the cards are displayed style with css
-
-          //select the card-container div by id
-          const cardOnTable = document.querySelector("#card-container")
-
-//create an image tag to be appended with this.deck[drawCardsForPlayr]
-          const cardOneOnTable = document.createElement("img");
-          cardOneOnTable.src = `images/${this.deck[drawCardsForPlayr].img}`
-          cardOneOnTable.classList.add("threeCards")
-          cardOnTable.append(cardOneOnTable);
-          this.deck.splice(drawCardsForPlayr, 1)
-
-          //append the image to the card container
+      //append the image to the card container
 
       }
   },
@@ -423,12 +421,12 @@ const game = {
 
 
   drawMysteryCard: function (playerIndex) {
-      for(let i = 0; i < 1; i++){ //loop that draws one card from deck
-          let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length)) // random card
-          console.log('your mystery card:')
-          console.log(oneCardFrmDeck)
-          console.log(this.deck[oneCardFrmDeck])
-          this.activeCard = (this.deck[oneCardFrmDeck])
+    for(let i = 0; i < 1; i++){ //loop that draws one card from deck
+      let oneCardFrmDeck = (Math.floor(Math.random() * this.deck.length)) // random card
+        console.log('your mystery card:')
+        console.log(oneCardFrmDeck)
+        console.log(this.deck[oneCardFrmDeck])
+        this.activeCard = (this.deck[oneCardFrmDeck])
 
     }
   },
@@ -446,27 +444,63 @@ const game = {
 
 
   processCardGuessing: function (event) {
-      console.log(event.target.id);
-      console.log(this);
-      console.log(this[this.activePlayer]);
-      console.log(this[this.activePlayer].hand);
-      if (event.target.id === "Lhigh-button") { //LEFT CARD
-        if (this[this.activePlayer].hand[0].value >= this.activeCard.value){
-          this[this.activePlayer].hand[0].correctGuess = true;
-          console.log("correct");
-          alert("Awesome, keep it up! Head over to Round 2!")
+    console.log(event.target.id);
+    console.log(this);
+    console.log(this.activePlayer);
+    // console.log(this[this.activePlayer].hand);
+    if (event.target.id === "Lhigh-button") { //LEFT CARD
+      if (this.activePlayer.hand[0].value >= this.activeCard.value){
+        this.activePlayer.hand[0].correctGuess = true;
+        console.log("correct");
+        alert("Awesome, keep it up! Head over to Round 2!")
 
-        } else {
-          console.log("incorrect");
-          this.playerLost();
-        } 
+      } else {
+        console.log("incorrect");
+        this.playerLost();
       } 
-      if (event.target.id === "Llow-button") {
-        if (this[this.activePlayer].hand[0].value <= this.activeCard.value){
-          this[this.activePlayer].hand[0].correctGuess = true;
-          console.log("correct");
-          alert("Easy peasy! Head down to Round 2!")
+    }
+    if (event.target.id === "Llow-button") {
+      if (this.activePlayer.hand[0].value <= this.activeCard.value){
+        this.activePlayer.hand[0].correctGuess = true;
+        console.log("correct");
+        alert("Easy peasy! Head down to Round 2!")
 
+
+      } else {
+        console.log("incorrect");
+        this.playerLost();
+
+      }
+    } 
+    if (event.target.id === "Mhigh-button") { //MIDDLE CARD
+      if (this.activePlayer.hand[1].value > this.activeCard.value){
+        this.activePlayer.hand[1].correctGuess = true;
+        console.log("correct");
+        alert("Correct! Go to Round 3!")
+
+      } else {
+        console.log("incorrect");
+        this.playerLost();
+
+      }
+    } 
+    if (event.target.id === "Mlow-button") {
+      if (this.activePlayer.hand[1].value < this.activeCard.value){
+        this.activePlayer.hand[1].correctGuess = true;
+        console.log("correct");
+        alert("Correct! Go to Round 3!")
+
+
+      } else {
+        console.log("incorrect");
+        this.playerLost();
+
+      } 
+    }
+      if (event.target.id === "Rhigh-button") { //RIGHT CARD
+        if (this.activePlayer.hand[2].value > this.activeCard.value){
+        this.activePlayer.hand[2].correctGuess = true;
+        console.log("correct");
 
         } else {
           console.log("incorrect");
@@ -474,55 +508,17 @@ const game = {
 
         }
       } 
-      if (event.target.id === "Mhigh-button") { //MIDDLE CARD
-        if (this[this.activePlayer].hand[1].value > this.activeCard.value){
-          this[this.activePlayer].hand[1].correctGuess = true;
-          console.log("correct");
-          alert("Correct! Go to Round 3!")
-
-        } else {
-          console.log("incorrect");
-          this.playerLost();
-
-        }
-      } 
-      if (event.target.id === "Mlow-button") {
-        if (this[this.activePlayer].hand[1].value < this.activeCard.value){
-          this[this.activePlayer].hand[1].correctGuess = true;
-          console.log("correct");
-          alert("Correct! Go to Round 3!")
-
-
+      if (event.target.id === "Rlow-button") {
+        if (this.activePlayer.hand[2].value < this.activeCard.value){
+        this.activePlayer.hand[2].correctGuess = true;
+        console.log("correct");
         } else {
           console.log("incorrect");
           this.playerLost();
 
         } 
       }
-        if (event.target.id === "Rhigh-button") { //RIGHT CARD
-          if (this[this.activePlayer].hand[2].value > this.activeCard.value){
-          this[this.activePlayer].hand[2].correctGuess = true;
-          console.log("correct");
-
-          } else {
-            console.log("incorrect");
-            this.playerLost();
-
-          }
-      } 
-        if (event.target.id === "Rlow-button") {
-          if (this[this.activePlayer].hand[2].value < this.activeCard.value){
-          this[this.activePlayer].hand[2].correctGuess = true;
-          console.log("correct");
-          } else {
-            console.log("incorrect");
-            this.playerLost();
-
-          } 
-      }
-
-
-          this.didPlayerWin();
+        this.didPlayerWin();
 
   },
 
@@ -549,6 +545,8 @@ const game = {
 
 
 
+
+
 // =============================================
 // 
 // Method that determines if player wins or loses a round
@@ -556,36 +554,22 @@ const game = {
 // =============================================
 
   didPlayerWin: function () {
-    let countP1 = 0
-    let countP2 = 0
+    let countP = 0
 
 
 
-    for(let i = 0; i < this.playerTwo.hand.length; i++ ) {
-      if (this.playerTwo.hand[i].correctGuess === true) {
-        countP2++
+    for(let i = 0; i < this.activePlayer.hand.length; i++ ) {
+      if (this.activePlayer.hand[i].correctGuess === true) {
+        countP++
       }
     }
 
-    if (countP2 === this.playerTwo.hand.length) {
-      alert(`${this.playerTwo.name} wins the game!`)
-      console.log(`${this.playerTwo.name} wins the game!`);
+
+    if (countP === this.activePlayer.hand.length) {
+      alert(`${this.activePlayer.name} wins the game!`)
+      console.log(`${this.activePlayer.name} wins the game!`);
 
     }
-
-
-    for(let i = 0; i < this.playerOne.hand.length; i++ ) {
-      if (this.playerOne.hand[i].correctGuess === true) {
-        countP1++
-      }
-    }
-
-    if (countP1 === this.playerOne.hand.length) {
-      alert(`${this.playerOne.name} wins the game!`)
-      console.log(`${this.playerOne.name} wins the game!`);
-
-    }
-
 
   },
 
@@ -606,7 +590,7 @@ const game = {
     this.nextPlayer();
 
     this.drawMysteryCard();
-},
+  },
 
 
 
@@ -624,19 +608,20 @@ const game = {
 
       //find player from name
   nextPlayer: function () {
-    if(this.activePlayer === "playerOne"){
-      this.activePlayer = "playerTwo"
+    if(this.activePlayer === this.playerOne){
+      this.activePlayer = this.playerTwo
       this.putCardsOnHand ("playerTwo")
       alert(`Wrong guess. Now it's ${this.playerTwo.name} turn!`);
 
 
-    } else if(this.activePlayer === "playerTwo"){
-      this.activePlayer = "playerOne"
+    } else if(this.activePlayer === this.playerTwo){
+
+      this.activePlayer = this.playerOne
       this.putCardsOnHand ("playerOne")
       alert(`Wrong guess. Now it's ${this.playerOne.name} turn!`);
 
     } else {
-      this.activePlayer = ""
+      this.activePlayer = null;
     }
     setTimeout(function() {
       game.flipCardOver()},5000);
@@ -662,6 +647,9 @@ const game = {
 const startButton = document.querySelector("#start-button")
 startButton.addEventListener("click", (event) => {
   game.start()
+const initiateGame = document.querySelector("#start-game-section")
+  initiateGame.style.display = "block";
+
 });
 
 // =============================================
@@ -749,7 +737,7 @@ const middleLowButtonClicked = document.querySelector("#Mlow-button")
 middleLowButtonClicked.addEventListener("click", (event) => {
   //const firstName = document.querySelector("#firstName");
   console.log("low button was clicked from middle card")
-   game.processCardGuessing(event)
+    game.processCardGuessing(event)
  
   // game.drawMysteryCard()
   event.preventDefault();
