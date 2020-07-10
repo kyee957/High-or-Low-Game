@@ -321,7 +321,11 @@ const game = {
     this.putCardsOnHand("playerOne"); 
     this.drawMysteryCard();
     this.activePlayer = this.playerOne;
-    alert(`Looks like it's your turn, ${this.playerOne.name}.\nScroll down and start guessing!`)
+    Swal.fire(
+    "Let's Rock'n Roll!",
+    `It's ${this.playerOne.name}'s turn. Scroll down and start guessing!`,
+    'info'
+    );
     // console.log("this is scoreP1 \n", scoreP1);
     // console.log("this is scoreP2 \n", scoreP2);
   },
@@ -452,8 +456,11 @@ const game = {
       if (this.activePlayer.hand[0].value >= this.activeCard.value){
         this.activePlayer.hand[0].correctGuess = true;
         console.log("correct");
-        alert("Awesome, keep it up! Head over to Round 2!")
-
+        Swal.fire(
+          'Correct',
+          'Great job, keep it going!',
+          'success'
+        )
       } else {
         console.log("incorrect");
         this.playerLost();
@@ -463,8 +470,11 @@ const game = {
       if (this.activePlayer.hand[0].value <= this.activeCard.value){
         this.activePlayer.hand[0].correctGuess = true;
         console.log("correct");
-        alert("Easy peasy! Head down to Round 2!")
-
+        Swal.fire(
+          'Correct',
+          'Yesir, easy peasy',
+          'success'
+        )
 
       } else {
         console.log("incorrect");
@@ -476,8 +486,11 @@ const game = {
       if (this.activePlayer.hand[1].value > this.activeCard.value){
         this.activePlayer.hand[1].correctGuess = true;
         console.log("correct");
-        alert("Correct! Go to Round 3!")
-
+        Swal.fire(
+          'Correct',
+          'Give yourself a pat on the back',
+          'success'
+        )
       } else {
         console.log("incorrect");
         this.playerLost();
@@ -488,8 +501,11 @@ const game = {
       if (this.activePlayer.hand[1].value < this.activeCard.value){
         this.activePlayer.hand[1].correctGuess = true;
         console.log("correct");
-        alert("Correct! Go to Round 3!")
-
+        Swal.fire(
+          'Correct',
+          'Awesome guess!',
+          'success'
+        )
 
       } else {
         console.log("incorrect");
@@ -566,7 +582,11 @@ const game = {
 
 
     if (countP === this.activePlayer.hand.length) {
-      alert(`${this.activePlayer.name} wins the game!`)
+      Swal.fire(
+        'Champion',
+        `${this.activePlayer.name} wins the game!`,
+        'success'
+      )
       console.log(`${this.activePlayer.name} wins the game!`);
 
     }
@@ -611,14 +631,21 @@ const game = {
     if(this.activePlayer === this.playerOne){
       this.activePlayer = this.playerTwo
       this.putCardsOnHand ("playerTwo")
-      alert(`Wrong guess. Now it's ${this.playerTwo.name} turn!`);
-
+      Swal.fire(
+      'Aww, Wrong guess',
+      `Looks like it's ${this.playerTwo.name}'s turn!`,
+      'error'
+      );
 
     } else if(this.activePlayer === this.playerTwo){
 
       this.activePlayer = this.playerOne
       this.putCardsOnHand ("playerOne")
-      alert(`Wrong guess. Now it's ${this.playerOne.name} turn!`);
+      Swal.fire(
+      'Oh snaps! Wrong guess',
+      `Looks like it's ${this.playerOne.name}'s turn!`,
+      'error'
+      );
 
     } else {
       this.activePlayer = null;
